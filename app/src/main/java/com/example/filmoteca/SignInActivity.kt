@@ -26,7 +26,7 @@ class SignInActivity : AppCompatActivity() {
             if(email.isNotEmpty() && password.isNotEmpty()){
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful){
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, HomeActivity::class.java)
                         startActivity(intent)
                     } else{
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
